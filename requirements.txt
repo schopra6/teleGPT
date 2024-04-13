@@ -1,0 +1,10 @@
+torch
+numpy
+transformers
+datasets
+tiktoken
+tqdm
+regex
+telethon
+python-dotenv
+asyncio
