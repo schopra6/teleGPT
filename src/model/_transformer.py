@@ -51,10 +51,8 @@ class CausalSelfAttention(nn.Module):
         self.attn_dropout = nn.Dropout(cfg.gpt.dropout)
         self.resid_dropout = nn.Dropout(cfg.gpt.dropout)
 
-        # flash attention make GPU go brrrrr but support is only in PyTorch >= 2.0
         self.flash = hasattr(torch.nn.functional, 'scaled_dot_product_attention')
         if not self.flash:
-            print("WARNING: using slow attention. Flash Attention requires PyTorch >= 2.0")
             # causal mask to ensure that attention is only applied to the left in the input sequence
             self.register_buffer("bias", torch.tril(torch.ones(cfg.gpt.block_size, cfg.gpt.block_size))
                                         .view(1, 1, cfg.gpt.block_size, cfg.gpt.block_size))
