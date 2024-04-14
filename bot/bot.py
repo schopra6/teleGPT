@@ -7,9 +7,9 @@ import asyncio
 
 
 # Local application imports
-from Telegpt.sample import GramSampler
-from Telegpt.config import Config as cfg
-from Telegpt.argparse import arg_parser
+from base_modules.sample import GramSampler
+from base_modules.config import Config as cfg
+from base_modules.argparse import arg_parser
 
 # Third party imports
 from dotenv import load_dotenv
