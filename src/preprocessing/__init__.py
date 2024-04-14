@@ -1,1 +1,1 @@
-from ._dataset import GramDataset
+from ._dataset import teleDataset
